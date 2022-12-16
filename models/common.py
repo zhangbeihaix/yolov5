@@ -903,6 +903,7 @@ class CoordAtt(nn.Module):
     def forward(self, x):
         identity = x
 
+        n, c, h, w = x.size()
         x_h = self.pool_h(x)
         x_w = self.pool_w(x).permute(0, 1, 3, 2)
 
